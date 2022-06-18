@@ -1,0 +1,137 @@
+.box {
+  width: 64px;
+  height: 64px;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background-color: white;
+  cursor: pointer;
+  z-index: 2;
+}
+.mask {
+  width: 28px;
+  height: 2px;
+  position: absolute;
+  left: 18px;
+  overflow: hidden;
+}
+.mask-1 {
+  top: 24.6px;
+}
+.mask-2,
+.mask-4,
+.mask-5 {
+  top: 31px;
+}
+.mask-3 {
+  top: 37.4px;
+}
+.mask-4 {
+  transform: rotate(45deg);
+}
+.mask-5 {
+  transform: rotate(-45deg);
+}
+
+.long {
+  transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+  width: 84px;
+  height: 2px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition-duration: 0.6s;
+}
+.long-4,
+.long-5 {
+  transform: translateX(-33.3%);
+}
+
+.long::before,
+.long::after {
+  width: 28px;
+  height: 2px;
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  background-color: black;
+  transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+}
+.long::before {
+  left: -56px;
+}
+
+/* delays */
+.long-1 {
+  transition-delay: 0.2s;
+}
+.long-2 {
+  transition-delay: 0.25s;
+}
+.long-3 {
+  transition-delay: 0.3s;
+}
+.long-2::before,
+.long-2::after {
+  transition-delay: 0.05s;
+}
+.long-3::before,
+.long-3::after,
+.long-5::before,
+.long-5::after {
+  transition-delay: 0.1s;
+}
+
+/* hover */
+.box:hover .long::before,
+.box:hover .long::after {
+  transform: translateX(200%);
+}
+
+.box:hover .long-1::before,
+.box:hover .long-1::after,
+.box:hover .long-2::before,
+.box:hover .long-2::after,
+.box:hover .long-3::before,
+.box:hover .long-3::after {
+  transition-duration: 1s;
+}
+
+/* active */
+.box.active .long-1 {
+  transition-delay: 0s;
+}
+.box.active .long-2 {
+  transition-delay: 0.05s;
+}
+.box.active .long-3 {
+  transition-delay: 0.1s;
+}
+
+.box.active .long-1,
+.box.active .long-2,
+.box.active .long-3 {
+  transform: translateX(33.3%);
+}
+
+.box.active .long-4,
+.box.active .long-5 {
+  transform: translateX(0);
+}
+.box.active .long-4 {
+  transition-delay: 0.25s;
+}
+.box.active .long-5 {
+  transition-delay: 0.3s;
+}
+
+/* active + hover */
+.box.active:hover .long-1::before,
+.box.active:hover .long-1::after,
+.box.active:hover .long-2::before,
+.box.active:hover .long-2::after,
+.box.active:hover .long-3::before,
+.box.active:hover .long-3::after {
+  transition-duration: 0s;
+}

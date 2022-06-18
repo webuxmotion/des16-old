@@ -1,0 +1,58 @@
+body {
+  margin: 0;
+}
+h1 {
+  margin: 0;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+.g-wrapper {
+  padding: 20px;
+  padding-top: 100px;
+}
+.c-header {
+  background-color: black;
+  padding: 15px;
+  position: fixed;
+  width: 100%;
+}
+
+.c-nav {
+  display: flex;
+  list-style: none;
+}
+.c-nav li {
+  padding: 0 10px;
+}
+.c-nav a {
+  color: white;
+}
+
+.c-newPreview {
+  border: 1px solid gray;
+  display: inline-block;
+  padding: 5px;
+  color: gray;
+}
+.c-newPreview h3 {
+  color: black;
+}
+.c-newPreview:hover {
+  color: black;
+  border-color: black;
+}
+.c-hero {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+}
+.c-hero > div {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}

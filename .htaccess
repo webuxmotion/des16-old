@@ -1,0 +1,8 @@
+RewriteEngine On
+
+RewriteRule ^api/([a-z]+)/([a-z-]+)$ /api/$1/$2.php
+
+# Redirects for ADMIN
+RewriteRule ^about$ /about.php
+RewriteRule ^works$ /works.php
+RewriteRule ^contacts$ /contacts.php

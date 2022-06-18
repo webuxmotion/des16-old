@@ -1,0 +1,177 @@
+.nav-toggler {
+  width: 64px;
+  height: 64px;
+  position: fixed;
+  top: 100px;
+  left: 50px;
+  z-index: 2000;
+  background-color: white;
+  cursor: pointer;
+}
+
+.nav-toggler__line {
+  width: 28px;
+  height: 2px;
+  position: absolute;
+  //overflow: hidden;
+}
+
+.nav-toggler__line-inner::before {
+  left: -56px;
+}
+
+.nav-toggler__line:nth-child(1) {
+  left: 18px;
+  top: 24px;
+}
+.nav-toggler__line:nth-child(2) {
+  left: 18px;
+  top: 31px;
+}
+.nav-toggler__line:nth-child(3) {
+  left: 18px;
+  top: 38px;
+}
+
+.nav-toggler__line-inner {
+  width: 84px;
+  height: 2px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition-duration: 0.6s;
+}
+
+.nav-toggler__line:nth-child(2) .nav-toggler__line-inner::before,
+.nav-toggler__line:nth-child(2) .nav-toggler__line-inner::after {
+  transition-delay: 0.05s;
+}
+.nav-toggler__line:nth-child(3) .nav-toggler__line-inner::before,
+.nav-toggler__line:nth-child(3) .nav-toggler__line-inner::after {
+  transition-delay: 0.1s;
+}
+
+.nav-toggler__line:nth-child(1) .nav-toggler__line-inner {
+  transition-delay: 0.2s;
+}
+.nav-toggler__line:nth-child(2) .nav-toggler__line-inner {
+  transition-delay: 0.25s;
+}
+.nav-toggler__line:nth-child(3) .nav-toggler__line-inner {
+  transition-delay: 0.3s;
+}
+
+.nav-toggler__line-inner::before,
+.nav-toggler__line-inner::after {
+    width: 28px;
+    height: 2px;
+    content: '';
+    display: block;
+    position: absolute;
+    background-color: black;
+    transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.nav-toggler:hover .nav-toggler__line-inner::before,
+.nav-toggler:hover .nav-toggler__line-inner::after {
+  transition-duration: 1s;
+  transform: translateX(200%);
+}
+
+.nav-toggler.is-active .nav-toggler__line-inner {
+  transform: translateX(33.3%);
+}
+
+.nav-toggler.is-active .nav-toggler__line:nth-child(1) .nav-toggler__line-inner {
+  transition-delay: 0s;
+}
+.nav-toggler.is-active .nav-toggler__line:nth-child(2) .nav-toggler__line-inner {
+  transition-delay: 0.05s;
+}
+.nav-toggler.is-active .nav-toggler__line:nth-child(3) .nav-toggler__line-inner {
+  transition-delay: 0.1s;
+}
+
+.nav-toggler.is-active:hover .nav-toggler__line-inner::before,
+.nav-toggler.is-active:hover .nav-toggler__line-inner::after {
+  transition-duration: 0s;
+}
+
+
+
+
+
+.nav-toggler__cross-line {
+  width: 28px;
+    height: 2px;
+    //overflow: hidden;
+    position: absolute;
+    z-index: 10;
+    background-color: rgba(256, 0, 0, 0.1);
+}
+
+.nav-toggler__cross-line--one {
+  transform: rotate(45deg);
+}
+.nav-toggler__cross-line--two {
+  transform: rotate(-45deg);
+}
+.nav-toggler__cross-line--one,
+.nav-toggler__cross-line--two {
+  top: 31px;
+  left: 18px;
+}
+.nav-toggler__cross-line-inner {
+  transform: translateX(-33.3%);
+  transition-duration: 0.6s;
+  transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+  width: 84px;
+  height: 2px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.nav-toggler__cross-line-inner::before,
+.nav-toggler__cross-line-inner::after {
+    width: 28px;
+    height: 2px;
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    background-color: black;
+}
+.nav-toggler__cross-line-inner::after {
+  left: 0;
+  background-color: red !important;
+}
+.nav-toggler__cross-line-inner::before {
+  left: -56px;
+}
+
+.nav-toggler:hover .nav-toggler__cross-line-inner::before,
+.nav-toggler:hover .nav-toggler__cross-line-inner::after {
+  transform: translateX(200%);
+}
+
+.nav-toggler__cross-line--two .nav-toggler__cross-line-inner::before,
+.nav-toggler__cross-line--two .nav-toggler__cross-line-inner::after {
+  transition-delay: 0.1s;
+}
+
+.nav-toggler:hover .nav-toggler__cross-line--two .nav-toggler__cross-line-inner::before,
+.nav-toggler:hover .nav-toggler__cross-line--two .nav-toggler__cross-line-inner::after {
+  transition-delay: 0.1s;
+}
+
+.nav-toggler.is-active .nav-toggler__cross-line--one .nav-toggler__cross-line-inner,
+.nav-toggler.is-active .nav-toggler__cross-line--two .nav-toggler__cross-line-inner {
+  transform: translateX(0);
+}
+.nav-toggler.is-active .nav-toggler__cross-line--one .nav-toggler__cross-line-inner {
+    transition-delay: 0.25s;
+}
+.nav-toggler.is-active .nav-toggler__cross-line--two .nav-toggler__cross-line-inner {
+    transition-delay: 0.3s;
+}
